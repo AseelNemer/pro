@@ -1,9 +1,9 @@
 import React , {useState} from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import axios from 'axios';
+
 
 
 export default function Create() {
@@ -17,12 +17,10 @@ export default function Create() {
   })
 
   const createStudent = () =>{
-    console.log(student);
-      axios.post('http://localhost:5000/students',student).then((response) => {
-        console.log(response);
-      }, (error) => {
-        console.log(error);
-      });
+      axios.post('http://localhost:5000/students',student).then( () => {
+        window.location.reload(false);
+        //when i add a data it refresh the page
+      })
   
   } 
 
